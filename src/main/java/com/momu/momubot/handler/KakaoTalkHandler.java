@@ -23,7 +23,7 @@ public class KakaoTalkHandler {
    */
   public Mono<ServerResponse> getKeyboardButtons(ServerRequest request) {
     log.debug("Request for keyboard button api");
-    KeyBoard keyBoard = KeyBoardUtils.getDefaultKeyBoard();
+    KeyBoard keyBoard = KeyBoardUtils.getDefaultTextKeyBoard();
     return ServerResponse.ok()
         .contentType(MediaType.APPLICATION_JSON)
         .body(Mono.just(keyBoard), KeyBoard.class);
